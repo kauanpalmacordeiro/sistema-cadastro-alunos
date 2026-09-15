@@ -1,20 +1,31 @@
-# sistema-cadastro-alunos
+# Sistema de Cadastro de Alunos
 
-# nome dos integrantes: 
+Projeto desenvolvido para fins **educacionais**, com o objetivo de praticar conceitos de programação, versionamento de código e desenvolvimento colaborativo utilizando Git e GitHub.
 
-Kauan de palma cordeiro 
-Gabriel de souza andrade 
-Carlos eduardo santos de araújo
+## 👥 Integrantes
 
-# Descrição
+- **Kauan de Palma Cordeiro**
+- **Gabriel de Souza Andrade**
+- **Carlos Eduardo Santos de Araújo**
 
-O projeto foi feito para fins estucacionais, apenas para treinamento e usado como trabalho para notas
+## 📋 Descrição
 
-# Tecnologias utilizadas
+O **Sistema de Cadastro de Alunos** é um projeto desenvolvido como atividade acadêmica e prática de programação.
 
-- GitHub 
-- VsCode
+A aplicação permite realizar operações básicas de cadastro de alunos diretamente pelo terminal, proporcionando uma experiência prática com entrada e processamento de dados.
 
-# Como executar o projeto 
+> **Observação:** os dados inseridos durante a execução são utilizados apenas durante o funcionamento do programa e **não são armazenados permanentemente**.
 
-Basta apenas roda-lo no terminal do VsCode e escrever seus dados no terminal. Obs: não serão armazenados  
+## 🛠️ Tecnologias utilizadas
+
+- **Python**
+- **Git**
+- **GitHub**
+- **Visual Studio Code**
+
+## ▶️ Como executar o projeto
+
+### 1. Clone o repositório
+
+```bash
+git clone URL_DO_REPOSITORIOs
