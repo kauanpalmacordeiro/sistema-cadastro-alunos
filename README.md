@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para fins **educacionais**, com o objetivo de praticar conceitos de programação, versionamento de código e desenvolvimento colaborativo utilizando Git e GitHub.
 
-## 👥 Integrantes
+ ## 👥 Integrantes
 
 - **Kauan de Palma Cordeiro**
 - **Gabriel de Souza Andrade**
