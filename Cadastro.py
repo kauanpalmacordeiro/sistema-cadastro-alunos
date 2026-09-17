@@ -1,3 +1,5 @@
+# Grupo: Julia e Ágatha
+
 # Cadastra um usuário pelo terminal e salva seus dados no arquivo dados.json.
 
 import json
