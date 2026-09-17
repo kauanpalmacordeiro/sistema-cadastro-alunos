@@ -1,21 +1,29 @@
+# Localiza um usuário pelo email, remove seu cadastro e atualiza o dados.json.
 
-usuarios = [
-    {
-        "nome": "Carlos",
-        "email": "carlos@email.com",
-        "senha": "123"
-    }
-]
+import json
 
-print("=== EXCLUSÃO ===")
+email = input("Digite o email do usuário que deseja excluir: ")
 
-email = input("Digite o email do usuário: ")
+try:
+    with open("dados.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
 
-for usuario in usuarios:
-    if usuario["email"] == email:
-        usuarios.remove(usuario)
-        print("Usuário excluído!")
-        print(usuarios)
-        break
-else:
-    print("Usuário não encontrado!")
+    usuario_encontrado = None
+
+    for usuario in usuarios:
+        if usuario["email"] == email:
+            usuario_encontrado = usuario
+            break
+
+    if usuario_encontrado:
+        usuarios.remove(usuario_encontrado)
+
+        with open("dados.json", "w", encoding="utf-8") as arquivo:
+            json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+        print("Usuário excluído com sucesso!")
+    else:
+        print("Usuário não encontrado.")
+
+except (FileNotFoundError, json.JSONDecodeError):
+    print("Nenhum usuário cadastrado.")

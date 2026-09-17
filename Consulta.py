@@ -1,16 +1,25 @@
-print("=== CONSULTA ===")
+# Consulta no dados.json um usuário cadastrado utilizando seu endereço de email.
 
-nome_consulta = input("Digite o nome para consultar: ")
+import json
 
-for usuario in usuarios:
-    if usuario["nome"] == nome_consulta:
-        print("Usuário encontrado!")
-        print("Nome:", usuario["nome"])
-        print("Email:", usuario["email"])
-        print("Senha:", usuario["senha"])
-        break
-else:
-    print("Usuário não encontrado!")
+email = input("Digite o email que deseja consultar: ")
 
+try:
+    with open("dados.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
 
+    encontrado = False
 
+    for usuario in usuarios:
+        if usuario["email"] == email:
+            print("\nUsuário encontrado!")
+            print("Nome:", usuario["nome"])
+            print("Email:", usuario["email"])
+            encontrado = True
+            break
+
+    if not encontrado:
+        print("Usuário não encontrado.")
+
+except (FileNotFoundError, json.JSONDecodeError):
+    print("Nenhum usuário cadastrado.")

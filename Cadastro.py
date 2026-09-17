@@ -1,11 +1,16 @@
+# Cadastra um usuário pelo terminal e salva seus dados no arquivo dados.json.
 
-usuarios = []
+import json
 
-print("=== CADASTRO ===")
+nome = input("Digite seu nome: ")
+email = input("Digite seu email: ")
+senha = input("Digite sua senha: ")
 
-nome = input("Nome: ")
-email = input("Email: ")
-senha = input("Senha: ")
+try:
+    with open("dados.json", "r", encoding="utf-8") as arquivo:
+        usuarios = json.load(arquivo)
+except (FileNotFoundError, json.JSONDecodeError):
+    usuarios = []
 
 usuario = {
     "nome": nome,
@@ -15,5 +20,7 @@ usuario = {
 
 usuarios.append(usuario)
 
-print("Usuário cadastrado!")
-print(usuarios)
+with open("dados.json", "w", encoding="utf-8") as arquivo:
+    json.dump(usuarios, arquivo, indent=4, ensure_ascii=False)
+
+print("Cadastro salvo com sucesso!")
